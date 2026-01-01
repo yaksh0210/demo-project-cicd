@@ -20,6 +20,7 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.VM_HOST }} >> ~/.ssh/known_hosts
 
+
     - name: Deploy to Azure VM
       run: |
         ssh ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} << 'EOF'
